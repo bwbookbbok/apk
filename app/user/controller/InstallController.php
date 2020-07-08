@@ -724,7 +724,7 @@ class InstallController extends HomeBaseController
 
         $device_info = $client->api('device')->all($queryParams);
 
-        if ($device_info['data']) {
+        if (array_key_exists('data', $device_info) && is_array($device_info['data'])) {
             //已经添加过该UDID
             $devices[] = $device_info['data'][0]['id'];
         } else {
