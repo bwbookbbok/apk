@@ -705,7 +705,7 @@ class InstallController extends HomeBaseController
             $result = $client->api('bundleId')->register($name, $platform, $bundleId);
 
             if (!isset($result['data'])) {
-                echo '创建包名失败！'.$bundleId;
+                echo '请刷新网页重试';
                 exit;
             }
             $bId = $result['data']['id'];
